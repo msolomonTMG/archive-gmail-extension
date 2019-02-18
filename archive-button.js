@@ -2,13 +2,11 @@ addButtonToPage ()
 
 function addButtonToPage () {
   let linkList = document.getElementsByClassName('TK')[0]
-  console.log('adding button to page')
   if (!linkList) {
     setTimeout(() => {
       addButtonToPage()
     }, 1000)
   } else {
-    console.log('there is a button')
     linkList.innerHTML += archiveButtonTemplate
     document.getElementById("archived").addEventListener("click", goToArchived);
   }
@@ -35,7 +33,6 @@ const archiveButtonTemplate = `
 `
 
 function goToArchived () {
-  console.log('going to archived...')
   location.replace('https://mail.google.com/mail/u/0/#search/has%3Anouserlabels+-in%3ASent+-in%3AChat+-in%3ADraft+-in%3AInbox')
   document.getElementById('archived-link').classList.add('nZ')
   document.getElementById('archived-link').classList.add('aiq')
