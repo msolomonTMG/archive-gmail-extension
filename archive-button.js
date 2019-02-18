@@ -4,7 +4,6 @@ function addButtonToPage () {
   let linkList = document.getElementsByClassName('TK')[0]
   console.log('adding button to page')
   if (!linkList) {
-    console.log('no list')
     setTimeout(() => {
       addButtonToPage()
     }, 1000)
@@ -43,7 +42,6 @@ function goToArchived () {
 }
 
 chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
-  console.log(request.action)
   if (request.action === 'activate-archive-button') {
     document.getElementById('archived-link').classList.add('nZ')
     document.getElementById('archived-link').classList.add('aiq')
